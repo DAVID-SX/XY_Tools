@@ -1,0 +1,5 @@
+E:\#7-代码文件\#1-Project\XY_Tools(V)\XY_Tools\bin\Debug\XY_Tools.dll
+E:\#7-代码文件\#1-Project\XY_Tools(V)\XY_Tools\bin\Debug\XY_Tools.pdb
+E:\#7-代码文件\#1-Project\XY_Tools(V)\XY_Tools\obj\Debug\XY_Tools.csproj.CoreCompileInputs.cache
+E:\#7-代码文件\#1-Project\XY_Tools(V)\XY_Tools\obj\Debug\XY_Tools.dll
+E:\#7-代码文件\#1-Project\XY_Tools(V)\XY_Tools\obj\Debug\XY_Tools.pdb
