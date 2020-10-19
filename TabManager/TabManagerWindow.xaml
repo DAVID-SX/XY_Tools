@@ -8,15 +8,9 @@
         Title="插件管理器" Height="400" Width="350">
     <Grid>
         <GroupBox Name="tabNameGroupBox" Header="请勾选需要显示的面板" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="334" Margin="0,0,0,0">
-            <ListBox Name="tabNameListBox"></ListBox>
+            <DockPanel x:Name="tabNamaDockPanel"></DockPanel>
         </GroupBox>
-        <ListView HorizontalAlignment="Left" Height="100" Margin="71,190,0,0" VerticalAlignment="Top" Width="100">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn/>
-                </GridView>
-            </ListView.View>
-        </ListView>
+
 
     </Grid>
 </Window>
