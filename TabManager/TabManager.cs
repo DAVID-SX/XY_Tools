@@ -19,22 +19,22 @@ namespace TabManager
             MainWindow wpf = new MainWindow();
 
             // 获取功能页信息并将其存放至列表中
-            List<string> tabNameList = new List<string>();
-            RibbonControl ribbonControl = ComponentManager.Ribbon;
-            foreach (RibbonTab tab in ribbonControl.Tabs)
+            IList<RibbonTab> tabList = ComponentManager.Ribbon.Tabs;
+            foreach (RibbonTab tab in tabList)
             {
                 if (!tab.IsContextualTab && !tab.IsMergedContextualTab && tab.KeyTip == null)
                 {
                     //tab.IsVisible = !tab.IsVisible;
                     //Autodesk.Revit.UI.TaskDialog.Show("result", tab.Name);
                     //wpf.tabNameListBox.ItemsSource = ribbonControl.Tabs.ToList();
-                    tabNameList.Add(tab.Name.ToString());
+                    //tabNameList.Add(tab.Name.ToString());
+                    Autodesk.Revit.UI.TaskDialog.Show("Result", tab.Name);
                 }
             }
 
             // 为wpf窗体的ListBox指定源文件
-            wpf.tabNameListBox.ItemsSource = tabNameList;
-            wpf.ShowDialog();
+            //wpf.tabNameListBox.ItemsSource = tabNameList;
+            //wpf.ShowDialog();
             return Result.Succeeded;
         }
     }
