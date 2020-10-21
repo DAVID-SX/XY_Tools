@@ -10,47 +10,33 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 
-namespace TabManager
+namespace TabManagerProject
 {
     [Transaction(TransactionMode.Manual)]
     class TabManager : IExternalCommand
     {
+
         public Result Execute(ExternalCommandData commandData, ref string message, ElementSet elements)
         {
-
+            Cache cache = new Cache();
 
             // 获取功能页信息并将其存放至列表中
             IList<RibbonTab> tabList = ComponentManager.Ribbon.Tabs;
-            List<string> tabNameList = new List<string>();
-            List<bool> tabBoolList = new List<bool>();
+            //List<string> tabNameList = new List<string>();
+            //List<bool> tabBoolList = new List<bool>();
             foreach (RibbonTab tab in tabList)
             {
                 if (!tab.IsContextualTab && !tab.IsMergedContextualTab && tab.KeyTip == null)
                 {
                     //tab.IsVisible = !tab.IsVisible;
-                    //Autodesk.Revit.UI.TaskDialog.Show("result", tab.Name);
-                    //wpf.tabNameListBox.ItemsSource = ribbonControl.Tabs.ToList();
-                    //tabNameList.Add(tab.Name.ToString());
-                    tabNameList.Add(tab.Name);
-                    tabBoolList.Add(true);
-                    //Autodesk.Revit.UI.TaskDialog.Show("Result", tab.Name);
+                    cache.TabNameList.Add(tab.Name);
+                    //cache.TabValueList.Add(true);
                 }
             }
+            Autodesk.Revit.UI.TaskDialog.Show("result", cache.TabNameList.Count.ToString());
             // 初始化窗体
-            MainWindow wpf = new MainWindow();
-            //为wpf窗体的Canvas指定源文件
-            for (int i = 0; i < tabNameList.Count; i++)
-            {
-                CheckBox checkBox = new CheckBox
-                {
-                    Height = 14, Content = tabNameList[i],
-                    checkBox.Checked +=
-                };
-                Canvas.SetTop(checkBox, 18 * i);
-                Canvas.SetLeft(checkBox, 10);
-                wpf.tabNameCanvas.Children.Add(checkBox);
+            TabManagerWindow wpf = new TabManagerWindow(commandData, cache);
 
-            }
             wpf.ShowDialog();
             return Result.Succeeded;
         }

@@ -10,3 +10,5 @@ E:\#7-代码文件\#1-Project\XY_Tools(V)\TabManager\obj\Debug\TabManager.dll
 E:\#7-代码文件\#1-Project\XY_Tools(V)\TabManager\obj\Debug\TabManager.pdb
 E:\#7-代码文件\#1-Project\XY_Tools(V)\TabManager\obj\Debug\TabManagerWindow.g.cs
 E:\#7-代码文件\#1-Project\XY_Tools(V)\TabManager\obj\Debug\TabManagerWindow.baml
+E:\#7-代码文件\#1-Project\XY_Tools(V)\TabManager\obj\Debug\TabManager.csprojAssemblyReference.cache
+E:\#7-代码文件\#1-Project\XY_Tools(V)\TabManager\obj\Debug\TabManageWindow.g.cs

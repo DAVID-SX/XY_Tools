@@ -5,9 +5,9 @@ VisualStudioVersion = 16.0.30225.117
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XY_Tools", "XY_Tools\XY_Tools.csproj", "{4219ABE5-C286-4228-AF16-3D49C41A4E7B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TabManager", "TabManager\TabManager.csproj", "{B3A26C87-610A-4DD4-BDD0-7478E74036E1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TabManagerProject", "TabManager\TabManagerProject.csproj", "{B3A26C87-610A-4DD4-BDD0-7478E74036E1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CheckListView", "CheckListView\CheckListView.csproj", "{A731D60F-8D75-40A1-979F-07478C8F9240}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CheckListView", "CheckListView\CheckListView.csproj", "{A731D60F-8D75-40A1-979F-07478C8F9240}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
