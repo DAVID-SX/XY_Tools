@@ -22,18 +22,17 @@ namespace TabManagerProject
 
             // 获取功能页信息并将其存放至列表中
             IList<RibbonTab> tabList = ComponentManager.Ribbon.Tabs;
-            //List<string> tabNameList = new List<string>();
-            //List<bool> tabBoolList = new List<bool>();
             foreach (RibbonTab tab in tabList)
             {
                 if (!tab.IsContextualTab && !tab.IsMergedContextualTab && tab.KeyTip == null)
                 {
                     //tab.IsVisible = !tab.IsVisible;
                     cache.TabNameList.Add(tab.Name);
-                    //cache.TabValueList.Add(true);
+                    cache.TabValueList.Add(true);
                 }
             }
-            Autodesk.Revit.UI.TaskDialog.Show("result", cache.TabNameList.Count.ToString());
+ 
+            //Autodesk.Revit.UI.TaskDialog.Show("result", cache.TabNameList.Count.ToString());
             // 初始化窗体
             TabManagerWindow wpf = new TabManagerWindow(commandData, cache);
 

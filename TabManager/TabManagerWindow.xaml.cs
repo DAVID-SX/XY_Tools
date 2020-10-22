@@ -31,16 +31,48 @@ namespace TabManagerProject
         }
         
 
-        public CheckBox checkbox;
+        private CheckBox checkbox;
         private void TabManagerWindow1_Loaded(object sender, RoutedEventArgs e)
         {
             for (int i = 0; i < _cache.TabNameList.Count; i++)
             {
                 checkbox = new CheckBox();
+                //checkbox.Name = (i+1).ToString();
                 checkbox.Content = _cache.TabNameList[i];
                 this.tabNameStackPanel.Children.Add(checkbox);
             }
 
+
+        }
+
+        private void confirmButton_Click(object sender, RoutedEventArgs e)
+        {
+            
+            //for (int i = 0; i < _cache.TabNameList.Count; i++)
+            //{
+
+            //}
+            //foreach (var item in this.tabNameStackPanel.Children)
+            //{
+            //    CheckBox checkBox = (CheckBox)item;
+            //    if (checkBox.IsChecked != true)
+            //    {
+            //        MessageBox.Show(checkBox.Content.ToString());
+            //    }
+            //}
+            for (int i = 0; i < this.tabNameStackPanel.Children.Count; i++)
+            {
+                CheckBox checkBox = (CheckBox)this.tabNameStackPanel.Children[i];
+                if (checkBox.IsChecked != true)
+                {
+                    //MessageBox.Show(checkBox.Content.ToString());
+                    this._cache.TabValueList[i] = false;
+                }
+            }
+            for (int i = 0; i < _cache.TabValueList.Count; i++)
+            {
+                MessageBox.Show(this._cache.TabValueList[i].ToString());
+            }
 
         }
     }
