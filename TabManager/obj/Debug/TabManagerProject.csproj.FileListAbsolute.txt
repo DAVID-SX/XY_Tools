@@ -10,3 +10,15 @@ E:\#7-代码文件\#1-Project\XY_Tools(V)\TabManager\obj\Debug\TabManagerProject
 E:\#7-代码文件\#1-Project\XY_Tools(V)\TabManager\obj\Debug\TabManagerProject.csproj.CoreCompileInputs.cache
 E:\#7-代码文件\#1-Project\XY_Tools(V)\TabManager\obj\Debug\TabManagerProject.dll
 E:\#7-代码文件\#1-Project\XY_Tools(V)\TabManager\obj\Debug\TabManagerProject.pdb
+C:\Users\David\Source\Repos\XY_Tools\TabManager\bin\Debug\TabManagerProject.dll
+C:\Users\David\Source\Repos\XY_Tools\TabManager\bin\Debug\TabManagerProject.pdb
+C:\Users\David\Source\Repos\XY_Tools\TabManager\obj\Debug\TabManagerWindow.g.cs
+C:\Users\David\Source\Repos\XY_Tools\TabManager\obj\Debug\TabManagerProject_MarkupCompile.cache
+C:\Users\David\Source\Repos\XY_Tools\TabManager\obj\Debug\TabManagerProject_MarkupCompile.lref
+C:\Users\David\Source\Repos\XY_Tools\TabManager\obj\Debug\TabManagerWindow.baml
+C:\Users\David\Source\Repos\XY_Tools\TabManager\obj\Debug\TabManagerProject.g.resources
+C:\Users\David\Source\Repos\XY_Tools\TabManager\obj\Debug\TabManagerProject.Properties.Resources.resources
+C:\Users\David\Source\Repos\XY_Tools\TabManager\obj\Debug\TabManagerProject.csproj.GenerateResource.cache
+C:\Users\David\Source\Repos\XY_Tools\TabManager\obj\Debug\TabManagerProject.csproj.CoreCompileInputs.cache
+C:\Users\David\Source\Repos\XY_Tools\TabManager\obj\Debug\TabManagerProject.dll
+C:\Users\David\Source\Repos\XY_Tools\TabManager\obj\Debug\TabManagerProject.pdb

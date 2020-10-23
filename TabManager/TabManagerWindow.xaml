@@ -11,10 +11,10 @@
             <RowDefinition/>
             <RowDefinition Height="75"/>
         </Grid.RowDefinitions>
-        <GroupBox Name="tabNameGroupBox" Header="请勾选需要显示的面板" Margin="15">
+        <GroupBox Name="tabNameGroupBox" Header="请勾选需要显示的面板" Margin="5">
             <StackPanel x:Name="tabNameStackPanel" />
         </GroupBox>
-        <Button x:Name="confirmButton" Grid.Row="1" Content="确认" Width="85" Height="35" Click="confirmButton_Click" Margin="50,19.8,209,20.4"/>
-        <Button x:Name="cancelButton" Grid.Row="1" Content="取消" Width="85" Height="35" Margin="209,19.8,50,20.4"/>
+        <Button x:Name="confirmButton" Grid.Row="1" Content="确认" Height="35" Click="confirmButton_Click" Margin="50,20,214,20"/>
+        <Button x:Name="cancelButton" Grid.Row="1" Content="取消" Height="35" Margin="209,20,58,20" Click="cancelButton_Click"/>
     </Grid>
 </Window>
