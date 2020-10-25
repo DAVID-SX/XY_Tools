@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TabManagerProject"
         mc:Ignorable="d"
-        Title="插件管理器" Height="400" Width="350" Name="TabManagerWindow1" Loaded="TabManagerWindow1_Loaded">
+        Title="插件管理器" Height="400" Width="350" Name="TabManagerWindow1" Loaded="TabManagerWindow1_Loaded"
+        ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition/>

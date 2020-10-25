@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XY_Tools", "XY_Tools\XY_Too
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TabManagerProject", "TabManager\TabManagerProject.csproj", "{B3A26C87-610A-4DD4-BDD0-7478E74036E1}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CheckListView", "CheckListView\CheckListView.csproj", "{A731D60F-8D75-40A1-979F-07478C8F9240}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,10 +21,6 @@ Global
 		{B3A26C87-610A-4DD4-BDD0-7478E74036E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B3A26C87-610A-4DD4-BDD0-7478E74036E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B3A26C87-610A-4DD4-BDD0-7478E74036E1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A731D60F-8D75-40A1-979F-07478C8F9240}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A731D60F-8D75-40A1-979F-07478C8F9240}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A731D60F-8D75-40A1-979F-07478C8F9240}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A731D60F-8D75-40A1-979F-07478C8F9240}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

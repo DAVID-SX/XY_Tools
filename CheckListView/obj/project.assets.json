@@ -8,23 +8,23 @@
     ".NETCoreApp,Version=v3.1": []
   },
   "packageFolders": {
-    "C:\\Users\\David\\.nuget\\packages\\": {},
+    "C:\\Users\\11265\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\David\\Source\\Repos\\XY_Tools\\CheckListView\\CheckListView.csproj",
+      "projectUniqueName": "E:\\#7-代码文件\\#1-Project\\XY_Tools\\CheckListView\\CheckListView.csproj",
       "projectName": "CheckListView",
-      "projectPath": "C:\\Users\\David\\Source\\Repos\\XY_Tools\\CheckListView\\CheckListView.csproj",
-      "packagesPath": "C:\\Users\\David\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\David\\Source\\Repos\\XY_Tools\\CheckListView\\obj\\",
+      "projectPath": "E:\\#7-代码文件\\#1-Project\\XY_Tools\\CheckListView\\CheckListView.csproj",
+      "packagesPath": "C:\\Users\\11265\\.nuget\\packages\\",
+      "outputPath": "E:\\#7-代码文件\\#1-Project\\XY_Tools\\CheckListView\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\David\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\11265\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
