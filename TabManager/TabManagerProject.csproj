@@ -72,6 +72,7 @@
     </Page>
     <Compile Include="Cache.cs" />
     <Compile Include="TabManager.cs" />
+    <Compile Include="TabManagerRibbon.cs" />
     <Compile Include="TabManagerWindow.xaml.cs">
       <DependentUpon>TabManagerWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -99,6 +100,9 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\TabManager.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

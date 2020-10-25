@@ -34,4 +34,3 @@ E:\#7-代码文件\#1-Project\XY_Tools\TabManager\obj\Debug\TabManagerProject.cs
 E:\#7-代码文件\#1-Project\XY_Tools\TabManager\obj\Debug\TabManagerProject.csproj.CoreCompileInputs.cache
 E:\#7-代码文件\#1-Project\XY_Tools\TabManager\obj\Debug\TabManagerProject.dll
 E:\#7-代码文件\#1-Project\XY_Tools\TabManager\obj\Debug\TabManagerProject.pdb
-E:\#7-代码文件\#1-Project\XY_Tools\TabManager\obj\Debug\TabManagerProject.csprojAssemblyReference.cache
