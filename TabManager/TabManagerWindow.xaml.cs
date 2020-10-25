@@ -16,9 +16,6 @@ using System.Windows.Shapes;
 
 namespace TabManagerProject
 {
-    /// <summary>
-    /// MainWindow.xaml 的交互逻辑
-    /// </summary>
     public partial class TabManagerWindow : Window
     {
         private ExternalCommandData _commandData;
@@ -29,7 +26,7 @@ namespace TabManagerProject
             this._commandData = commandData;
             this._cache = cache;
         }
-        
+
 
         private CheckBox checkbox;
         private void TabManagerWindow1_Loaded(object sender, RoutedEventArgs e)
@@ -37,12 +34,9 @@ namespace TabManagerProject
             for (int i = 0; i < _cache.TabNameList.Count; i++)
             {
                 checkbox = new CheckBox();
-                //checkbox.Name = (i+1).ToString();
                 checkbox.Content = _cache.TabNameList[i];
                 this.tabNameStackPanel.Children.Add(checkbox);
             }
-
-
         }
 
         private void confirmButton_Click(object sender, RoutedEventArgs e)

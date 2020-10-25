@@ -33,7 +33,7 @@ namespace TabManagerProject
                     addinTabList.Add(tab);
                 }
             }
- 
+
             // 初始化窗体
             TabManagerWindow wpf = new TabManagerWindow(commandData, cache);
             wpf.ShowDialog();
