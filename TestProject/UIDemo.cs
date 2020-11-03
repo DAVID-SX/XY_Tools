@@ -21,9 +21,9 @@ namespace TestProject
         public Result OnStartup(UIControlledApplication application)
         {
 			//【01】创建一个RibbonTab
-			application.CreateRibbonTab("UITab");
+			application.CreateRibbonTab("XY工具集");
 			//【02】在刚才的RibbonTab中创建RibbonPanel
-			RibbonPanel rp = application.CreateRibbonPanel("UITab", "UIPanel");
+			RibbonPanel rp = application.CreateRibbonPanel("XY工具集", "插件管理器");
 			//【03】指定程序集的名称以及使用的类名
 			string assemblyPath = Assembly.GetExecutingAssembly().Location;
 			//获取程序集的路径（相对路径）
@@ -35,7 +35,7 @@ namespace TestProject
 			PushButton pushButton = rp.AddItem(pbd) as PushButton;
 			//【04-03】给按钮设置一个图片(大图标一般是32px，小图标一般是16px,格式可以是ico或者png）
 			//设置图片路径（右击项目名称>>添加>>文件夹>>新建文件夹并将图片拖动到文件夹中>>右击图片名称>>属性>>生成操作>>Resource
-			pushButton.LargeImage = new BitmapImage(new Uri("pack://application:,,,/TestProject;component/pic/爱心.png", UriKind.Absolute));//UIDemo指的是命名空间名
+			pushButton.LargeImage = new BitmapImage(new Uri("pack://application:,,,/TestProject;component/pic/TabManager.png", UriKind.Absolute));//UIDemo指的是命名空间名
 			//【04-04】给按钮设置一个默认提示信息
 			pushButton.ToolTip = "HelloRevit";
 			//【06】返回程序执行结果
