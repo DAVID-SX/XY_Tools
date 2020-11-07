@@ -13,7 +13,9 @@
             <RowDefinition Height="75"/>
         </Grid.RowDefinitions>
         <GroupBox Name="tabNameGroupBox" Header="请勾选需要显示的面板" Margin="5">
-            <StackPanel x:Name="tabNameStackPanel" />
+            <StackPanel x:Name="tabNameStackPanel" >
+                <CheckBox x:Name="checkBox_SelectAll" Content="全选" Checked="checkBox_SelectAll_Checked" Unchecked="checkBox_SelectAll_Unchecked" />
+            </StackPanel>
         </GroupBox>
         <Button x:Name="confirmButton" Grid.Row="1" Content="确认" Height="35" Click="confirmButton_Click" Margin="50,20,214,20"/>
         <Button x:Name="cancelButton" Grid.Row="1" Content="取消" Height="35" Margin="209,20,58,20" Click="cancelButton_Click"/>

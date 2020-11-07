@@ -26,3 +26,4 @@ E:\#7-代码文件\#1-Project\XY_Tools\TestProject\obj\Debug\TestProject.csproj.
 E:\#7-代码文件\#1-Project\XY_Tools\TestProject\obj\Debug\TestProject.csproj.CopyComplete
 E:\#7-代码文件\#1-Project\XY_Tools\TestProject\obj\Debug\TestProject.dll
 E:\#7-代码文件\#1-Project\XY_Tools\TestProject\obj\Debug\TestProject.pdb
+E:\#7-代码文件\#1-Project\XY_Tools\TestProject\obj\Debug\TestProject.csprojAssemblyReference.cache

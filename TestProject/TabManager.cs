@@ -27,9 +27,8 @@ namespace TestProject
             {
                 if (!tab.IsContextualTab && !tab.IsMergedContextualTab && tab.KeyTip == null)
                 {
-                    //tab.IsVisible = !tab.IsVisible;
                     cache.TabNameList.Add(tab.Name);
-                    cache.TabValueList.Add(true);
+                    //cache.TabValueList.Add(true);
                     addinTabList.Add(tab);
                 }
             }
@@ -37,9 +36,12 @@ namespace TestProject
             // 初始化窗体
             TabManagerWindow wpf = new TabManagerWindow(commandData, cache);
             wpf.ShowDialog();
-            for (int i = 0; i < wpf._cache.TabValueList.Count; i++)
+            if (wpf._cache.TabValueList.Count != 0)
             {
-                addinTabList[i].IsVisible = wpf._cache.TabValueList[i];
+                for (int i = 0; i < addinTabList.Count; i++)
+                {
+                    addinTabList[i].IsVisible = wpf._cache.TabValueList[i + 1];
+                }
             }
             return Result.Succeeded;
         }

@@ -20,6 +20,7 @@ namespace TestProject
     {
         private ExternalCommandData _commandData;
         public Cache _cache;
+        UIDemo uiDemo = new UIDemo();
         public TabManagerWindow(ExternalCommandData commandData, Cache cache)
         {
             InitializeComponent();
@@ -44,9 +45,17 @@ namespace TestProject
             for (int i = 0; i < this.tabNameStackPanel.Children.Count; i++)
             {
                 CheckBox checkBox = (CheckBox)this.tabNameStackPanel.Children[i];
-                if (checkBox.IsChecked != true)
+                if (checkBox.Content.ToString() == uiDemo.TabName)
                 {
-                    this._cache.TabValueList[i] = false;
+                    this._cache.TabValueList.Add(true);
+                }
+                else if (checkBox.IsChecked != true)
+                {
+                    this._cache.TabValueList.Add(false);
+                }
+                else
+                {
+                    this._cache.TabValueList.Add(true);
                 }
             }
             this.Close();
@@ -55,6 +64,24 @@ namespace TestProject
         private void cancelButton_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        private void checkBox_SelectAll_Checked(object sender, RoutedEventArgs e)
+        {
+            foreach (var item in tabNameStackPanel.Children)
+            {
+                CheckBox checkBox = (CheckBox)item;
+                checkBox.IsChecked = true;
+            }
+        }
+
+        private void checkBox_SelectAll_Unchecked(object sender, RoutedEventArgs e)
+        {
+            foreach (var item in tabNameStackPanel.Children)
+            {
+                CheckBox checkBox = (CheckBox)item;
+                checkBox.IsChecked = false;
+            }
         }
     }
 }

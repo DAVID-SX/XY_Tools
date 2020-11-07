@@ -13,6 +13,13 @@ namespace TestProject
     [Transaction(TransactionMode.Manual)]
     class UIDemo : IExternalApplication
     {
+        private string tabName = "XY工具集";
+
+        public string TabName
+        {
+            get { return tabName; }
+        }
+
         public Result OnShutdown(UIControlledApplication application)
         {
             throw new NotImplementedException();
@@ -21,15 +28,15 @@ namespace TestProject
         public Result OnStartup(UIControlledApplication application)
         {
 			//【01】创建一个RibbonTab
-			application.CreateRibbonTab("XY工具集");
+			application.CreateRibbonTab(tabName);
 			//【02】在刚才的RibbonTab中创建RibbonPanel
-			RibbonPanel rp = application.CreateRibbonPanel("XY工具集", "插件管理器");
+			RibbonPanel rp = application.CreateRibbonPanel("XY工具集", "界面管理工具集");
 			//【03】指定程序集的名称以及使用的类名
 			string assemblyPath = Assembly.GetExecutingAssembly().Location;
 			//获取程序集的路径（相对路径）
 			string classNameHelloRevit = "TestProject.TabManager"; //namespaceName.className
 			//【04-01】创建pushbutton
-			PushButtonData pbd = new PushButtonData("InnerNameRevit", "Hello,Revit", assemblyPath, classNameHelloRevit);
+			PushButtonData pbd = new PushButtonData("InnerNameRevit", "插件管理器", assemblyPath, classNameHelloRevit);
 			//new PushButtonData("在程序内部的名称，必须唯一", "在按钮上显示的名称", 程序集dll的路径, 命名空间以及类名)
 			//【04-02】将pushbuttom添加到RibbonPanel中
 			PushButton pushButton = rp.AddItem(pbd) as PushButton;
