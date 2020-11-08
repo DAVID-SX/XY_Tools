@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Application">
+    <Name>External Tool</Name>
+    <Assembly>TestProject.dll</Assembly>
+    <ClientId>371fd44d-af2d-4e73-8780-968a04c6d892</ClientId>
+    <FullClassName>XY_Tools_Project.XY_Tools</FullClassName>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

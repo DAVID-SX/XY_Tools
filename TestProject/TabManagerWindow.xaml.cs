@@ -14,21 +14,21 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace TestProject
+namespace XY_Tools_Project
 {
     public partial class TabManagerWindow : Window
     {
         private ExternalCommandData _commandData;
         public Cache _cache;
-        UIDemo uiDemo = new UIDemo();
+        XY_Tools uiDemo = new XY_Tools();
+        //通过构造函数将commandData和缓存类传入
         public TabManagerWindow(ExternalCommandData commandData, Cache cache)
         {
             InitializeComponent();
             this._commandData = commandData;
             this._cache = cache;
         }
-
-
+        //窗体加载时根据缓存类中的内容为StackPanel添加复选框
         private CheckBox checkbox;
         private void TabManagerWindow1_Loaded(object sender, RoutedEventArgs e)
         {
@@ -36,10 +36,14 @@ namespace TestProject
             {
                 checkbox = new CheckBox();
                 checkbox.Content = _cache.TabNameList[i];
+                Thickness thickness = new Thickness(3);
+                checkbox.Margin = thickness;
                 this.tabNameStackPanel.Children.Add(checkbox);
             }
         }
-
+        //定义属性来判断窗体是如何关闭的
+        public bool IsClickCanceled { set; get; } = false;
+        //单击确定时返回插件面板是否关闭的列表
         private void confirmButton_Click(object sender, RoutedEventArgs e)
         {
             for (int i = 0; i < this.tabNameStackPanel.Children.Count; i++)
@@ -58,8 +62,10 @@ namespace TestProject
                     this._cache.TabValueList.Add(true);
                 }
             }
+            IsClickCanceled = true;
             this.Close();
         }
+
 
         private void cancelButton_Click(object sender, RoutedEventArgs e)
         {
