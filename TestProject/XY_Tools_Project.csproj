@@ -66,6 +66,7 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="JoinGeometry.cs" />
     <Compile Include="NameChecker.cs" />
     <Compile Include="XY_Tools.cs" />
     <Page Include="TabManagerWindow.xaml">
