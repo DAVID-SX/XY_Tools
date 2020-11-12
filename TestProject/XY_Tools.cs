@@ -22,7 +22,7 @@ namespace XY_Tools_Project
 
         public Result OnShutdown(UIControlledApplication application)
         {
-            throw new NotImplementedException();
+            return Result.Succeeded;
         }
 
         public Result OnStartup(UIControlledApplication application)
