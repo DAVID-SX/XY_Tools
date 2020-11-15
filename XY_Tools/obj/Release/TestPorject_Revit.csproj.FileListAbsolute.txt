@@ -1,0 +1,6 @@
+E:\#7-代码文件\#1-Project\XY_Tools\XY_Tools\bin\Release\XY_Tools.dll
+E:\#7-代码文件\#1-Project\XY_Tools\XY_Tools\bin\Release\XY_Tools.pdb
+E:\#7-代码文件\#1-Project\XY_Tools\XY_Tools\obj\Release\TestPorject_Revit.csprojAssemblyReference.cache
+E:\#7-代码文件\#1-Project\XY_Tools\XY_Tools\obj\Release\TestPorject_Revit.csproj.CoreCompileInputs.cache
+E:\#7-代码文件\#1-Project\XY_Tools\XY_Tools\obj\Release\XY_Tools.dll
+E:\#7-代码文件\#1-Project\XY_Tools\XY_Tools\obj\Release\XY_Tools.pdb

@@ -8,6 +8,10 @@ namespace XY_Tools_Project
 {
     public class Cache
     {
+        #region
+        /// <summary>
+        /// TabManager需要使用到的相关参数
+        /// </summary>
         //用于存放插件名称的列表
         private List<string> tabNameList = new List<string>();
         public List<string> TabNameList
@@ -22,5 +26,6 @@ namespace XY_Tools_Project
             get { return this.tabValueList; }
             set { this.tabValueList = value; }
         }
+        #endregion
     }
 }

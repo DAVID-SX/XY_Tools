@@ -1,0 +1,108 @@
+﻿<Window x:Class="XY_Tools_Project.JoinGeometry_Window"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:XY_Tools_Project"
+        mc:Ignorable="d"
+        Title="模型扣减" Height="450" Width="450" ResizeMode="NoResize">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <!--范围过滤页面布置-->
+        <GroupBox Name="modelSourceGroupBox" Header="范围选择" Margin="3" Padding="3">
+            <StackPanel>
+                <RadioButton Name="selectModelRadioButton" Content="选择扣减模型" Margin="3"/>
+                <RadioButton x:Name="useModelRadioButton" Content="根据楼层扣减" Margin="3"/>
+                <ScrollViewer Name="floorListScrollList" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" Margin="3" Height="270" BorderThickness="2"/>
+                <UniformGrid Columns="3" Margin="3">
+                    <Button x:Name="selectAllFloorButton" Content="全选" HorizontalAlignment="Center" Width="50"/>
+                    <Button x:Name="selectNoneFloorButton" Content="全不选" HorizontalAlignment="Center" Width="50"/>
+                    <Button x:Name="reverseSelectFloorButton" Content="反选" HorizontalAlignment="Center" Width="50"/>
+                </UniformGrid>
+            </StackPanel>
+        </GroupBox>
+        <!--扣减方式选择页面-->
+        <GroupBox Name="joinModeGroupBox" Header="扣减类型" Margin="3" Padding="3" Grid.Column="1">
+            <StackPanel>
+                <Label Content="结构构件默认扣减建筑构件" FontSize="10"/>
+                <ScrollViewer HorizontalScrollBarVisibility="Auto">
+                    <StackPanel>
+                        <Label Content="结构基础" Margin="2"/>
+                        <CheckBox x:Name="JGJC_JGQCheckBox" Content="结构基础切结构墙" Margin="2" Checked="JGJC_JGQCheckBox_Checked" />
+                        <CheckBox x:Name="JGJC_JGZCheckBox" Content="结构基础切结构柱" Margin="2" Checked="JGJC_JGZCheckBox_Checked"/>
+                        <CheckBox x:Name="JGJC_JGLCheckBox" Content="结构基础切结构梁" Margin="2" Checked="JGJC_JGLCheckBox_Checked" />
+                        <CheckBox x:Name="JGJC_JGBCheckBox" Content="结构基础切结构板" Margin="2" Checked="JGJC_JGBCheckBox_Checked"/>
+                        <CheckBox x:Name="JGJC_JGTCheckBox" Content="结构基础切结构梯" Margin="2" Checked="JGJC_JGTCheckBox_Checked"/>
+                        <CheckBox x:Name="JGJC_CGMXCheckBox" Content="结构基础切常规模型" Margin="2" Checked="JGJC_CGMXCheckBox_Checked" />
+                        <Label Content="结构墙" Margin="2"/>
+                        <CheckBox x:Name="JGQ_JGJCCheckBox" Content="结构墙切结构基础" Margin="2" Checked="JGQ_JGJCCheckBox_Checked" />
+                        <CheckBox x:Name="JGQ_JGZCheckBox" Content="结构墙切结构柱" Margin="2" Checked="JGQ_JGZCheckBox_Checked" />
+                        <CheckBox x:Name="JGQ_JGLCheckBox" Content="结构墙切结构梁" Margin="2" Checked="JGQ_JGLCheckBox_Checked" />
+                        <CheckBox x:Name="JGQ_JGBCheckBox" Content="结构墙切结构板" Margin="2" Checked="JGQ_JGBCheckBox_Checked" />
+                        <CheckBox x:Name="JGQ_JGTCheckBox" Content="结构墙切结构梯" Margin="2" Checked="JGQ_JGTCheckBox_Checked" />
+                        <CheckBox x:Name="JGQ_CGMXCheckBox" Content="结构墙切常规模型" Margin="2" Checked="JGQ_CGMXCheckBox_Checked" />
+                        <Label Content="结构柱" Margin="2"/>
+                        <CheckBox x:Name="JGZ_JGJCCheckBox" Content="结构柱切结构基础" Margin="2" Checked="JGZ_JGJCCheckBox_Checked" />
+                        <CheckBox x:Name="JGZ_JGQCheckBox" Content="结构柱切结构墙" Margin="2" Checked="JGZ_JGQCheckBox_Checked" />
+                        <CheckBox x:Name="JGZ_JGLCheckBox" Content="结构柱切结构梁" Margin="2" Checked="JGZ_JGLCheckBox_Checked" />
+                        <CheckBox x:Name="JGZ_JGBCheckBox" Content="结构柱切结构板" Margin="2" Checked="JGZ_JGBCheckBox_Checked" />
+                        <CheckBox x:Name="JGZ_JGTCheckBox" Content="结构柱切结构梯" Margin="2" Checked="JGZ_JGTCheckBox_Checked" />
+                        <CheckBox x:Name="JGZ_CGMXCheckBox" Content="结构柱切常规模型" Margin="2" Checked="JGZ_CGMXCheckBox_Checked" />
+                        <Label Content="结构梁" Margin="2"/>
+                        <CheckBox x:Name="JGL_JGJCCheckBox" Content="结构梁切结构基础" Margin="2" Checked="JGL_JGJCCheckBox_Checked" />
+                        <CheckBox x:Name="JGL_JGQCheckBox" Content="结构梁切结构墙" Margin="2" Checked="JGL_JGQCheckBox_Checked" />
+                        <CheckBox x:Name="JGL_JGZCheckBox" Content="结构梁切结构柱" Margin="2" Checked="JGL_JGZCheckBox_Checked" />
+                        <CheckBox x:Name="JGL_JGBCheckBox" Content="结构梁切结构板" Margin="2" Checked="JGL_JGBCheckBox_Checked" />
+                        <CheckBox x:Name="JGL_JGTCheckBox" Content="结构梁切结构梯" Margin="2" Checked="JGL_JGTCheckBox_Checked" />
+                        <CheckBox x:Name="JGL_CGMXCheckBox" Content="结构梁切常规模型" Margin="2" Checked="JGL_CGMXCheckBox_Checked" />
+                        <Label Content="结构板" Margin="2"/>
+                        <CheckBox x:Name="JGB_JGJCCheckBox" Content="结构板切结构基础" Margin="2" Checked="JGB_JGJCCheckBox_Checked" />
+                        <CheckBox x:Name="JGB_JGQCheckBox" Content="结构板切结构墙" Margin="2" Checked="JGB_JGQCheckBox_Checked" />
+                        <CheckBox x:Name="JGB_JGZCheckBox" Content="结构板切结构柱" Margin="2" Checked="JGB_JGZCheckBox_Checked" />
+                        <CheckBox x:Name="JGB_JGLCheckBox" Content="结构板切结构梁" Margin="2" Checked="JGB_JGLCheckBox_Checked" />
+                        <CheckBox x:Name="JGB_JGTCheckBox" Content="结构板切结构梯" Margin="2" Checked="JGB_JGTCheckBox_Checked" />
+                        <CheckBox x:Name="JGB_CGMXCheckBox" Content="结构板切常规模型" Margin="2" Checked="JGB_CGMXCheckBox_Checked" />
+                        <Label Content="结构梯" Margin="2"/>
+                        <CheckBox x:Name="JGT_JGJCCheckBox" Content="结构梯切结构基础" Margin="2" Checked="JGT_JGJCCheckBox_Checked" />
+                        <CheckBox x:Name="JGT_JGQCheckBox" Content="结构梯切结构墙" Margin="2" Checked="JGT_JGQCheckBox_Checked" />
+                        <CheckBox x:Name="JGT_JGZCheckBox" Content="结构梯切结构柱" Margin="2" Checked="JGT_JGZCheckBox_Checked" />
+                        <CheckBox x:Name="JGT_JGLCheckBox" Content="结构梯切结构梁" Margin="2" Checked="JGT_JGLCheckBox_Checked" />
+                        <CheckBox x:Name="JGT_JGBCheckBox" Content="结构梯切结构板" Margin="2" Checked="JGT_JGBCheckBox_Checked" />
+                        <CheckBox x:Name="JGT_CGMXCheckBox" Content="结构梯切常规模型" Margin="2" Checked="JGT_CGMXCheckBox_Checked" />
+                        <Label Content="常规模型" Margin="2"/>
+                        <CheckBox x:Name="CGMX_JGJCCheckBox" Content="常规模型切结构基础" Margin="2" Checked="CGMX_JGJCCheckBox_Checked" />
+                        <CheckBox x:Name="CGMX_JGQCheckBox" Content="常规模型切结构墙" Margin="2" Checked="CGMX_JGQCheckBox_Checked" />
+                        <CheckBox x:Name="CGMX_JGZCheckBox" Content="常规模型切结构柱" Margin="2" Checked="CGMX_JGZCheckBox_Checked" />
+                        <CheckBox x:Name="CGMX_JGLCheckBox" Content="常规模型切结构梁" Margin="2" Checked="CGMX_JGLCheckBox_Checked" />
+                        <CheckBox x:Name="CGMX_JGBCheckBox" Content="常规模型切结构板" Margin="2" Checked="CGMX_JGBCheckBox_Checked" />
+                        <CheckBox x:Name="CGMX_JGTCheckBox" Content="常规模型切结构梯" Margin="2" Checked="CGMX_JGTCheckBox_Checked" />
+                        <CheckBox x:Name="CGMX_JZQCheckBox" Content="常规模型切建筑墙" Margin="2" Checked="CGMX_JZQCheckBox_Checked" />
+                        <CheckBox x:Name="CGMX_JZZCheckBox" Content="常规模型切建筑柱" Margin="2" Checked="CGMX_JZZCheckBox_Checked" />
+                        <CheckBox x:Name="CGMX_JZBCheckBox" Content="常规模型切建筑板" Margin="2" Checked="CGMX_JZBCheckBox_Checked" />
+                        <Label Content="建筑墙" Margin="2"/>
+                        <CheckBox x:Name="JZQ_JZZCheckBox" Content="建筑墙切建筑柱" Margin="2" Checked="JZQ_JZZCheckBox_Checked" />
+                        <CheckBox x:Name="JZQ_JZBCheckBox" Content="建筑墙切建筑板" Margin="2" Checked="JZQ_JZBCheckBox_Checked" />
+                        <CheckBox x:Name="JZQ_CGMXCheckBox" Content="建筑墙切常规模型" Margin="2" Checked="JZQ_CGMXCheckBox_Checked" />
+                        <Label Content="建筑柱" Margin="2"/>
+                        <CheckBox x:Name="JZZ_JZQCheckBox" Content="建筑柱切建筑墙" Margin="2" Checked="JZZ_JZQCheckBox_Checked" />
+                        <CheckBox x:Name="JZZ_JZBCheckBox" Content="建筑柱切建筑板" Margin="2" Checked="JZZ_JZBCheckBox_Checked" />
+                        <CheckBox x:Name="JZZ_CGMXCheckBox" Content="建筑板切常规模型" Margin="2" Checked="JZZ_CGMXCheckBox_Checked" />
+                        <Label Content="建筑板" Margin="2"/>
+                        <CheckBox x:Name="JZB_JZQCheckBox" Content="建筑板切建筑墙" Margin="2" Checked="JZB_JZQCheckBox_Checked" />
+                        <CheckBox x:Name="JZB_JZZCheckBox" Content="建筑板切建筑柱" Margin="2" Checked="JZB_JZZCheckBox_Checked" />
+                        <CheckBox x:Name="JZB_CGMXCheckBox" Content="建筑板切常规模型" Margin="2" Checked="JZB_CGMXCheckBox_Checked" />
+                    </StackPanel>
+                </ScrollViewer>
+            </StackPanel>
+        </GroupBox>
+        <Button x:Name="confirmBtn" Content="确认" Grid.Row="1" Grid.Column="0" Width="75" Height="30" Margin="117,4,30,4"/>
+        <Button x:Name="cancelBtn" Content="取消" Grid.Row="1" Grid.Column="1" Width="75" Height="30" Margin="30,4,117,4"/>
+    </Grid>
+</Window>

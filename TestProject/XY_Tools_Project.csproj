@@ -67,8 +67,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="JoinGeometry.cs" />
+    <Compile Include="JoinGeometry_Window.xaml.cs">
+      <DependentUpon>JoinGeometry_Window.xaml</DependentUpon>
+    </Compile>
     <Compile Include="NameChecker.cs" />
     <Compile Include="XY_Tools.cs" />
+    <Page Include="JoinGeometry_Window.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="TabManagerWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
