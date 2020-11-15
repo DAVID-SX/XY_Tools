@@ -12,4 +12,3 @@ E:\#7-代码文件\#1-Project\XY_Tools\TestProject\obj\Release\XY_Tools_Project.
 E:\#7-代码文件\#1-Project\XY_Tools\TestProject\obj\Release\XY_Tools_Project.pdb
 E:\#7-代码文件\#1-Project\XY_Tools\TestProject\obj\Release\JoinGeometry_Window.g.cs
 E:\#7-代码文件\#1-Project\XY_Tools\TestProject\obj\Release\JoinGeometry_Window.baml
-E:\#7-代码文件\#1-Project\XY_Tools\TestProject\obj\Release\XY_Tools_Project.csprojAssemblyReference.cache

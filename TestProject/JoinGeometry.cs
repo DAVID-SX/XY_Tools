@@ -17,6 +17,8 @@ namespace XY_Tools_Project
             //获取文档
             UIDocument uidoc = commandData.Application.ActiveUIDocument;
             Document doc = uidoc.Document;
+            //初始化缓存系统
+            Cache cache = new Cache();
 
             //获取结构基础
             FilteredElementCollector foundationCollector = new FilteredElementCollector(doc).OfCategory(BuiltInCategory.OST_StructuralFoundation).OfClass(typeof(FamilyInstance));
@@ -68,8 +70,15 @@ namespace XY_Tools_Project
             //获取楼梯
             //FilteredElementCollector stairCollector = new FilteredElementCollector(doc).OfCategory(BuiltInCategory.OST_Stairs).OfClass(typeof());
 
+            //获取标高
+            FilteredElementCollector levelCollector = new FilteredElementCollector(doc).OfCategory(BuiltInCategory.OST_Levels).OfClass(typeof(Level));
+            List<Element> levelList = levelCollector.ToList();
+            foreach (Element elem in levelList)
+            {
+                cache.LevelNameList.Add(elem.Name);
+            }
 
-            JoinGeometry_Window joinGeometry_Window = new JoinGeometry_Window();
+            JoinGeometry_Window joinGeometry_Window = new JoinGeometry_Window(cache);
             joinGeometry_Window.ShowDialog();
 
 
@@ -81,6 +90,23 @@ namespace XY_Tools_Project
 
             return Result.Succeeded;
         }
-
+        public void JoinModel(Document doc, Element a, Element b)//被调用的扣减程序
+        {
+            if (JoinGeometryUtils.AreElementsJoined(doc, a, b))//判断a、b是否连接（例：结构柱扣梁中，a、b在这里代表的是结构柱与梁）
+            {
+                JoinGeometryUtils.UnjoinGeometry(doc, a, b);//a、b若已经连接则取消连接
+            }
+            try
+            {
+                JoinGeometryUtils.JoinGeometry(doc, a, b);//连接a、b
+                if (!JoinGeometryUtils.IsCuttingElementInJoin(doc, a, b))//判断扣减效果是否为a扣减b（前面的会扣减后面的）
+                {
+                    JoinGeometryUtils.SwitchJoinOrder(doc, a, b);//否则的话则转换为a扣减b
+                }
+            }
+            catch (Exception e)
+            {
+            }
+        }//调用结束，返回扣减成功的命令
     }
 }

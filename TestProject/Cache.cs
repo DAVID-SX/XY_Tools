@@ -17,15 +17,24 @@ namespace XY_Tools_Project
         public List<string> TabNameList
         {
             get { return this.tabNameList; }
-            set { this.tabNameList = value; }
+            set { tabNameList = value; }
         }
         //用于存放插件是否需要关闭的列表
         private List<bool> tabValueList = new List<bool>();
         public List<bool> TabValueList
         {
             get { return this.tabValueList; }
-            set { this.tabValueList = value; }
+            set { tabValueList = value; }
         }
         #endregion
+
+        private List<string> levelNameList = new List<string>();
+
+        public List<string> LevelNameList
+        {
+            get { return levelNameList; }
+            set { levelNameList = value; }
+        }
+
     }
 }

@@ -17,6 +17,7 @@ namespace XY_Tools_Project
 
     public partial class JoinGeometry_Window : Window
     {
+        Cache _cache;
         #region
         /// <summary>
         /// 定义需要使用到的相关属性和字段
@@ -739,11 +740,39 @@ namespace XY_Tools_Project
             CGMX_JZBCheckBox.IsChecked = false;
         }
         #endregion
-        public JoinGeometry_Window()
+        public JoinGeometry_Window(Cache cache)
         {
             InitializeComponent();
+            _cache = cache;
+        }
+        CheckBox checkbox;
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            for (int i = 0; i < _cache.LevelNameList.Count; i++)
+            {
+                checkbox = new CheckBox();
+                checkbox.Content = _cache.LevelNameList[i].Replace("_","__");
+                Thickness thickness = new Thickness(3);
+                checkbox.Margin = thickness;
+                this.levelListStackPanel.Children.Add(checkbox);
+            }
+            levelListStackPanel.IsEnabled = false;
+            selectAllModeleRadioButton.IsChecked = true;
         }
 
+        private void useModelRadioButton_Checked(object sender, RoutedEventArgs e)
+        {
+            levelListStackPanel.IsEnabled = true;
+        }
 
+        private void selectAllModeleRadioButton_Checked(object sender, RoutedEventArgs e)
+        {
+            levelListStackPanel.IsEnabled = false;
+        }
+
+        private void selectModelRadioButton_Checked(object sender, RoutedEventArgs e)
+        {
+            levelListStackPanel.IsEnabled = false;
+        }
     }
 }
