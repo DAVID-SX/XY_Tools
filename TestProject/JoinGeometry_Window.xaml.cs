@@ -18,10 +18,10 @@ namespace XY_Tools_Project
     public partial class JoinGeometry_Window : Window
     {
         Cache _cache;
-        #region
-        /// <summary>
+        CheckBox checkbox;
+        public bool isClickConfirm = false;
         /// 定义需要使用到的相关属性和字段
-        /// </summary>
+        #region
         // 结构基础扣减字段
         private bool jGJC_JGQ;
         public bool JGJC_JGQ
@@ -357,10 +357,8 @@ namespace XY_Tools_Project
             set { jJB_CGMX = value; }
         }
         #endregion
-        #region
-        /// <summary>
         /// 定义相关复选框的点击事件
-        /// </summary>
+        #region
         private void JGJC_JGQCheckBox_Checked(object sender, RoutedEventArgs e)
         {
             JGJC_JGQ = true;
@@ -740,18 +738,76 @@ namespace XY_Tools_Project
             CGMX_JZBCheckBox.IsChecked = false;
         }
         #endregion
+        ///标高的全选、取消全选、反选按钮功能及相关单选按钮功能的实现
+        #region
+        private void useModelRadioButton_Checked(object sender, RoutedEventArgs e)
+        {
+            levelListStackPanel.IsEnabled = true;
+            selectAllFloorButton.IsEnabled = true;
+            selectNoneFloorButton.IsEnabled = true;
+            reverseSelectFloorButton.IsEnabled = true;
+        }
+
+        private void selectAllModeleRadioButton_Checked(object sender, RoutedEventArgs e)
+        {
+            levelListStackPanel.IsEnabled = false;
+            selectAllFloorButton.IsEnabled = false;
+            selectNoneFloorButton.IsEnabled = false;
+            reverseSelectFloorButton.IsEnabled = false;
+        }
+
+        private void selectModelRadioButton_Checked(object sender, RoutedEventArgs e)
+        {
+            levelListStackPanel.IsEnabled = false;
+            selectAllFloorButton.IsEnabled = false;
+            selectNoneFloorButton.IsEnabled = false;
+            reverseSelectFloorButton.IsEnabled = false;
+        }
+        private void selectAllFloorButton_Click(object sender, RoutedEventArgs e)
+        {
+            foreach (object obj in levelListStackPanel.Children)
+            {
+                CheckBox newCB = obj as CheckBox;
+                newCB.IsChecked = true;
+            }
+        }
+
+        private void selectNoneFloorButton_Click(object sender, RoutedEventArgs e)
+        {
+            foreach (object obj in levelListStackPanel.Children)
+            {
+                CheckBox newCB2 = obj as CheckBox;
+                newCB2.IsChecked = false;
+            }
+        }
+
+        private void reverseSelectFloorButton_Click(object sender, RoutedEventArgs e)
+        {
+            foreach (object obj in levelListStackPanel.Children)
+            {
+                CheckBox newCB3 = obj as CheckBox;
+                if (newCB3.IsChecked == true)
+                {
+                    newCB3.IsChecked = false;
+                }
+                else if (newCB3.IsChecked == false)
+                {
+                    newCB3.IsChecked = true;
+                }
+            }
+        }
+        #endregion
         public JoinGeometry_Window(Cache cache)
         {
             InitializeComponent();
             _cache = cache;
         }
-        CheckBox checkbox;
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             for (int i = 0; i < _cache.LevelNameList.Count; i++)
             {
                 checkbox = new CheckBox();
-                checkbox.Content = _cache.LevelNameList[i].Replace("_","__");
+                checkbox.Content = _cache.LevelNameList[i].Replace("_", "__");
                 Thickness thickness = new Thickness(3);
                 checkbox.Margin = thickness;
                 this.levelListStackPanel.Children.Add(checkbox);
@@ -760,19 +816,15 @@ namespace XY_Tools_Project
             selectAllModeleRadioButton.IsChecked = true;
         }
 
-        private void useModelRadioButton_Checked(object sender, RoutedEventArgs e)
+        private void confirmBtn_Click(object sender, RoutedEventArgs e)
         {
-            levelListStackPanel.IsEnabled = true;
+            isClickConfirm = true;
+            this.Close();
         }
 
-        private void selectAllModeleRadioButton_Checked(object sender, RoutedEventArgs e)
+        private void cancelBtn_Click(object sender, RoutedEventArgs e)
         {
-            levelListStackPanel.IsEnabled = false;
-        }
-
-        private void selectModelRadioButton_Checked(object sender, RoutedEventArgs e)
-        {
-            levelListStackPanel.IsEnabled = false;
+            this.Close();
         }
     }
 }

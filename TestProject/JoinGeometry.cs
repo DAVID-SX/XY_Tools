@@ -25,8 +25,8 @@ namespace XY_Tools_Project
             List<Element> foundationList = foundationCollector.ToList();
 
             //获取建筑墙与结构墙
-            List<Wall> archiWallList = new List<Wall>();
-            List<Wall> struWallList = new List<Wall>();
+            List<Element> archiWallList = new List<Element>();
+            List<Element> struWallList = new List<Element>();
             FilteredElementCollector wallCollector = new FilteredElementCollector(doc)
                 .OfCategory(BuiltInCategory.OST_Walls).OfClass(typeof(Wall));
             foreach (var elem in wallCollector)
@@ -43,7 +43,7 @@ namespace XY_Tools_Project
             FilteredElementCollector archiColumnCollector = new FilteredElementCollector(doc).OfCategory(BuiltInCategory.OST_Columns).OfClass(typeof(FamilyInstance));
             List<Element> archiColumnList = archiColumnCollector.ToList();
             FilteredElementCollector struColumnCollector = new FilteredElementCollector(doc).OfCategory(BuiltInCategory.OST_StructuralColumns).OfClass(typeof(FamilyInstance));
-            List<Element> struColumnList = archiColumnCollector.ToList();
+            List<Element> struColumnList = struColumnCollector.ToList();
 
             //获取梁
             FilteredElementCollector beamCollector = new FilteredElementCollector(doc).OfCategory(BuiltInCategory.OST_StructuralFraming).OfClass(typeof(FamilyInstance));
@@ -78,11 +78,17 @@ namespace XY_Tools_Project
                 cache.LevelNameList.Add(elem.Name);
             }
 
+
+
             JoinGeometry_Window joinGeometry_Window = new JoinGeometry_Window(cache);
             joinGeometry_Window.ShowDialog();
 
 
-
+            Transaction trans = new Transaction(doc, "扣减模型");
+            trans.Start();
+            JoinModel(doc, foundationList, archiWallList);
+ 
+            trans.Commit();
 
 
 
@@ -90,23 +96,47 @@ namespace XY_Tools_Project
 
             return Result.Succeeded;
         }
-        public void JoinModel(Document doc, Element a, Element b)//被调用的扣减程序
+        //public void JoinModel(Document doc, Element a, Element b)//用a扣b
+        //{
+        //    if (JoinGeometryUtils.AreElementsJoined(doc, a, b))//判断a、b是否连接（例：结构柱扣梁中，a、b在这里代表的是结构柱与梁）
+        //    {
+        //        JoinGeometryUtils.UnjoinGeometry(doc, a, b);//a、b若已经连接则取消连接
+        //    }
+        //    try
+        //    {
+        //        JoinGeometryUtils.JoinGeometry(doc, a, b);//连接a、b
+        //        if (!JoinGeometryUtils.IsCuttingElementInJoin(doc, a, b))//判断扣减效果是否为a扣减b（前面的会扣减后面的）
+        //        {
+        //            JoinGeometryUtils.SwitchJoinOrder(doc, a, b);//否则的话则转换为a扣减b
+        //        }
+        //    }
+        //    catch (Exception e)
+        //    {
+        //    }
+        //}
+        public void JoinModel(Document doc, List<Element> listA, List<Element> listB)//用a扣b
         {
-            if (JoinGeometryUtils.AreElementsJoined(doc, a, b))//判断a、b是否连接（例：结构柱扣梁中，a、b在这里代表的是结构柱与梁）
+            for (int i = 0; i < listA.Count; i++)
             {
-                JoinGeometryUtils.UnjoinGeometry(doc, a, b);//a、b若已经连接则取消连接
-            }
-            try
-            {
-                JoinGeometryUtils.JoinGeometry(doc, a, b);//连接a、b
-                if (!JoinGeometryUtils.IsCuttingElementInJoin(doc, a, b))//判断扣减效果是否为a扣减b（前面的会扣减后面的）
+                for (int j = 0; j < listB.Count; j++)
                 {
-                    JoinGeometryUtils.SwitchJoinOrder(doc, a, b);//否则的话则转换为a扣减b
+                    if (JoinGeometryUtils.AreElementsJoined(doc, listA[i], listB[j]))//判断a、b是否连接（例：结构柱扣梁中，a、b在这里代表的是结构柱与梁）
+                    {
+                        JoinGeometryUtils.UnjoinGeometry(doc, listA[i], listB[j]);//a、b若已经连接则取消连接
+                    }
+                    try
+                    {
+                        JoinGeometryUtils.JoinGeometry(doc, listA[i], listB[j]);//连接a、b
+                        if (!JoinGeometryUtils.IsCuttingElementInJoin(doc, listA[i], listB[j]))//判断扣减效果是否为a扣减b（前面的会扣减后面的）
+                        {
+                            JoinGeometryUtils.SwitchJoinOrder(doc, listA[i], listB[j]);//否则的话则转换为a扣减b
+                        }
+                    }
+                    catch (Exception e)
+                    {
+                    }
                 }
             }
-            catch (Exception e)
-            {
-            }
-        }//调用结束，返回扣减成功的命令
+        }
     }
 }
