@@ -12,3 +12,4 @@ E:\#7-代码文件\#1-Project\XY_Tools\TestProject\obj\Debug\XY_Tools_Project.cs
 E:\#7-代码文件\#1-Project\XY_Tools\TestProject\obj\Debug\XY_Tools_Project.csproj.CoreCompileInputs.cache
 E:\#7-代码文件\#1-Project\XY_Tools\TestProject\obj\Debug\XY_Tools_Project.dll
 E:\#7-代码文件\#1-Project\XY_Tools\TestProject\obj\Debug\XY_Tools_Project.pdb
+E:\#7-代码文件\#1-Project\XY_Tools\TestProject\obj\Debug\XY_Tools_Project.csprojAssemblyReference.cache

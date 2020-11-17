@@ -44,50 +44,37 @@
                             <CheckBox x:Name="JGJC_JGZCheckBox" Content="结构基础切结构柱" Margin="2" Checked="JGJC_JGZCheckBox_Checked"/>
                             <CheckBox x:Name="JGJC_JGLCheckBox" Content="结构基础切结构梁" Margin="2" Checked="JGJC_JGLCheckBox_Checked" />
                             <CheckBox x:Name="JGJC_JGBCheckBox" Content="结构基础切结构板" Margin="2" Checked="JGJC_JGBCheckBox_Checked"/>
-                            <CheckBox x:Name="JGJC_JGTCheckBox" Content="结构基础切结构梯" Margin="2" Checked="JGJC_JGTCheckBox_Checked"/>
                             <CheckBox x:Name="JGJC_CGMXCheckBox" Content="结构基础切常规模型" Margin="2" Checked="JGJC_CGMXCheckBox_Checked" />
                             <Label Content="结构墙" Margin="2"/>
                             <CheckBox x:Name="JGQ_JGJCCheckBox" Content="结构墙切结构基础" Margin="2" Checked="JGQ_JGJCCheckBox_Checked" />
                             <CheckBox x:Name="JGQ_JGZCheckBox" Content="结构墙切结构柱" Margin="2" Checked="JGQ_JGZCheckBox_Checked" />
                             <CheckBox x:Name="JGQ_JGLCheckBox" Content="结构墙切结构梁" Margin="2" Checked="JGQ_JGLCheckBox_Checked" />
                             <CheckBox x:Name="JGQ_JGBCheckBox" Content="结构墙切结构板" Margin="2" Checked="JGQ_JGBCheckBox_Checked" />
-                            <CheckBox x:Name="JGQ_JGTCheckBox" Content="结构墙切结构梯" Margin="2" Checked="JGQ_JGTCheckBox_Checked" />
                             <CheckBox x:Name="JGQ_CGMXCheckBox" Content="结构墙切常规模型" Margin="2" Checked="JGQ_CGMXCheckBox_Checked" />
                             <Label Content="结构柱" Margin="2"/>
                             <CheckBox x:Name="JGZ_JGJCCheckBox" Content="结构柱切结构基础" Margin="2" Checked="JGZ_JGJCCheckBox_Checked" />
                             <CheckBox x:Name="JGZ_JGQCheckBox" Content="结构柱切结构墙" Margin="2" Checked="JGZ_JGQCheckBox_Checked" />
                             <CheckBox x:Name="JGZ_JGLCheckBox" Content="结构柱切结构梁" Margin="2" Checked="JGZ_JGLCheckBox_Checked" />
                             <CheckBox x:Name="JGZ_JGBCheckBox" Content="结构柱切结构板" Margin="2" Checked="JGZ_JGBCheckBox_Checked" />
-                            <CheckBox x:Name="JGZ_JGTCheckBox" Content="结构柱切结构梯" Margin="2" Checked="JGZ_JGTCheckBox_Checked" />
                             <CheckBox x:Name="JGZ_CGMXCheckBox" Content="结构柱切常规模型" Margin="2" Checked="JGZ_CGMXCheckBox_Checked" />
                             <Label Content="结构梁" Margin="2"/>
                             <CheckBox x:Name="JGL_JGJCCheckBox" Content="结构梁切结构基础" Margin="2" Checked="JGL_JGJCCheckBox_Checked" />
                             <CheckBox x:Name="JGL_JGQCheckBox" Content="结构梁切结构墙" Margin="2" Checked="JGL_JGQCheckBox_Checked" />
                             <CheckBox x:Name="JGL_JGZCheckBox" Content="结构梁切结构柱" Margin="2" Checked="JGL_JGZCheckBox_Checked" />
                             <CheckBox x:Name="JGL_JGBCheckBox" Content="结构梁切结构板" Margin="2" Checked="JGL_JGBCheckBox_Checked" />
-                            <CheckBox x:Name="JGL_JGTCheckBox" Content="结构梁切结构梯" Margin="2" Checked="JGL_JGTCheckBox_Checked" />
                             <CheckBox x:Name="JGL_CGMXCheckBox" Content="结构梁切常规模型" Margin="2" Checked="JGL_CGMXCheckBox_Checked" />
                             <Label Content="结构板" Margin="2"/>
                             <CheckBox x:Name="JGB_JGJCCheckBox" Content="结构板切结构基础" Margin="2" Checked="JGB_JGJCCheckBox_Checked" />
                             <CheckBox x:Name="JGB_JGQCheckBox" Content="结构板切结构墙" Margin="2" Checked="JGB_JGQCheckBox_Checked" />
                             <CheckBox x:Name="JGB_JGZCheckBox" Content="结构板切结构柱" Margin="2" Checked="JGB_JGZCheckBox_Checked" />
                             <CheckBox x:Name="JGB_JGLCheckBox" Content="结构板切结构梁" Margin="2" Checked="JGB_JGLCheckBox_Checked" />
-                            <CheckBox x:Name="JGB_JGTCheckBox" Content="结构板切结构梯" Margin="2" Checked="JGB_JGTCheckBox_Checked" />
                             <CheckBox x:Name="JGB_CGMXCheckBox" Content="结构板切常规模型" Margin="2" Checked="JGB_CGMXCheckBox_Checked" />
-                            <Label Content="结构梯" Margin="2"/>
-                            <CheckBox x:Name="JGT_JGJCCheckBox" Content="结构梯切结构基础" Margin="2" Checked="JGT_JGJCCheckBox_Checked" />
-                            <CheckBox x:Name="JGT_JGQCheckBox" Content="结构梯切结构墙" Margin="2" Checked="JGT_JGQCheckBox_Checked" />
-                            <CheckBox x:Name="JGT_JGZCheckBox" Content="结构梯切结构柱" Margin="2" Checked="JGT_JGZCheckBox_Checked" />
-                            <CheckBox x:Name="JGT_JGLCheckBox" Content="结构梯切结构梁" Margin="2" Checked="JGT_JGLCheckBox_Checked" />
-                            <CheckBox x:Name="JGT_JGBCheckBox" Content="结构梯切结构板" Margin="2" Checked="JGT_JGBCheckBox_Checked" />
-                            <CheckBox x:Name="JGT_CGMXCheckBox" Content="结构梯切常规模型" Margin="2" Checked="JGT_CGMXCheckBox_Checked" />
                             <Label Content="常规模型" Margin="2"/>
                             <CheckBox x:Name="CGMX_JGJCCheckBox" Content="常规模型切结构基础" Margin="2" Checked="CGMX_JGJCCheckBox_Checked" />
                             <CheckBox x:Name="CGMX_JGQCheckBox" Content="常规模型切结构墙" Margin="2" Checked="CGMX_JGQCheckBox_Checked" />
                             <CheckBox x:Name="CGMX_JGZCheckBox" Content="常规模型切结构柱" Margin="2" Checked="CGMX_JGZCheckBox_Checked" />
                             <CheckBox x:Name="CGMX_JGLCheckBox" Content="常规模型切结构梁" Margin="2" Checked="CGMX_JGLCheckBox_Checked" />
                             <CheckBox x:Name="CGMX_JGBCheckBox" Content="常规模型切结构板" Margin="2" Checked="CGMX_JGBCheckBox_Checked" />
-                            <CheckBox x:Name="CGMX_JGTCheckBox" Content="常规模型切结构梯" Margin="2" Checked="CGMX_JGTCheckBox_Checked" />
                             <CheckBox x:Name="CGMX_JZQCheckBox" Content="常规模型切建筑墙" Margin="2" Checked="CGMX_JZQCheckBox_Checked" />
                             <CheckBox x:Name="CGMX_JZZCheckBox" Content="常规模型切建筑柱" Margin="2" Checked="CGMX_JZZCheckBox_Checked" />
                             <CheckBox x:Name="CGMX_JZBCheckBox" Content="常规模型切建筑板" Margin="2" Checked="CGMX_JZBCheckBox_Checked" />

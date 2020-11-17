@@ -387,12 +387,7 @@ namespace XY_Tools_Project
             JGB_JGJCCheckBox.IsChecked = false;
         }
 
-        private void JGJC_JGTCheckBox_Checked(object sender, RoutedEventArgs e)
-        {
-            JGJC_JGT = true;
-            JGT_JGJC = false;
-            JGT_JGJCCheckBox.IsChecked = false;
-        }
+
 
         private void JGJC_CGMXCheckBox_Checked(object sender, RoutedEventArgs e)
         {
@@ -429,12 +424,7 @@ namespace XY_Tools_Project
             JGB_JGQCheckBox.IsChecked = false;
         }
 
-        private void JGQ_JGTCheckBox_Checked(object sender, RoutedEventArgs e)
-        {
-            JGQ_JGT = true;
-            JGT_JGQ = false;
-            JGT_JGQCheckBox.IsChecked = false;
-        }
+
 
         private void JGQ_CGMXCheckBox_Checked(object sender, RoutedEventArgs e)
         {
@@ -471,12 +461,7 @@ namespace XY_Tools_Project
             JGB_JGZCheckBox.IsChecked = false;
         }
 
-        private void JGZ_JGTCheckBox_Checked(object sender, RoutedEventArgs e)
-        {
-            JGZ_JGT = true;
-            JGT_JGZ = false;
-            JGT_JGZCheckBox.IsChecked = false;
-        }
+
 
         private void JGZ_CGMXCheckBox_Checked(object sender, RoutedEventArgs e)
         {
@@ -513,12 +498,7 @@ namespace XY_Tools_Project
             JGB_JGLCheckBox.IsChecked = false;
         }
 
-        private void JGL_JGTCheckBox_Checked(object sender, RoutedEventArgs e)
-        {
-            JGL_JGT = true;
-            JGT_JGL = false;
-            JGT_JGLCheckBox.IsChecked = false;
-        }
+
 
         private void JGL_CGMXCheckBox_Checked(object sender, RoutedEventArgs e)
         {
@@ -555,60 +535,13 @@ namespace XY_Tools_Project
             JGL_JGBCheckBox.IsChecked = false;
         }
 
-        private void JGB_JGTCheckBox_Checked(object sender, RoutedEventArgs e)
-        {
-            JGB_JGT = true;
-            JGT_JGB = false;
-            JGT_JGBCheckBox.IsChecked = false;
-        }
+
 
         private void JGB_CGMXCheckBox_Checked(object sender, RoutedEventArgs e)
         {
             JGB_CGMX = true;
             CGMX_JGB = false;
             CGMX_JGBCheckBox.IsChecked = false;
-        }
-
-        private void JGT_JGJCCheckBox_Checked(object sender, RoutedEventArgs e)
-        {
-            JGT_JGJC = true;
-            JGJC_JGT = false;
-            JGJC_JGTCheckBox.IsChecked = false;
-        }
-
-        private void JGT_JGQCheckBox_Checked(object sender, RoutedEventArgs e)
-        {
-            JGT_JGQ = true;
-            JGQ_JGT = false;
-            JGQ_JGTCheckBox.IsChecked = false;
-        }
-
-        private void JGT_JGZCheckBox_Checked(object sender, RoutedEventArgs e)
-        {
-            JGT_JGZ = true;
-            JGZ_JGT = false;
-            JGZ_JGTCheckBox.IsChecked = false;
-        }
-
-        private void JGT_JGLCheckBox_Checked(object sender, RoutedEventArgs e)
-        {
-            JGT_JGL = true;
-            JGL_JGT = false;
-            JGL_JGTCheckBox.IsChecked = false;
-        }
-
-        private void JGT_JGBCheckBox_Checked(object sender, RoutedEventArgs e)
-        {
-            JGT_JGB = true;
-            JGB_JGT = false;
-            JGB_JGTCheckBox.IsChecked = false;
-        }
-
-        private void JGT_CGMXCheckBox_Checked(object sender, RoutedEventArgs e)
-        {
-            JGT_CGMX = true;
-            CGMX_JGT = false;
-            CGMX_JGTCheckBox.IsChecked = false;
         }
 
         private void CGMX_JGJCCheckBox_Checked(object sender, RoutedEventArgs e)
@@ -644,13 +577,6 @@ namespace XY_Tools_Project
             CGMX_JGB = true;
             JGB_CGMX = false;
             JGB_CGMXCheckBox.IsChecked = false;
-        }
-
-        private void CGMX_JGTCheckBox_Checked(object sender, RoutedEventArgs e)
-        {
-            CGMX_JGT = true;
-            JGT_CGMX = false;
-            JGT_CGMXCheckBox.IsChecked = false;
         }
 
         private void CGMX_JZQCheckBox_Checked(object sender, RoutedEventArgs e)
