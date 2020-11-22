@@ -19,7 +19,45 @@ namespace XY_Tools_Project
     {
         Cache _cache;
         CheckBox checkbox;
-        public bool isClickConfirm = false;
+        /// <summary>
+        /// 确定窗体的关闭方式
+        /// </summary>
+        private bool isClickConfirm;
+        public bool IsClickConfirm
+        {
+            get { return isClickConfirm; }
+            set { isClickConfirm = value; }
+        }
+        /// <summary>
+        /// 确定需要扣减的范围
+        /// </summary>
+        private bool joinAllModel;
+        public bool JoinAllModel
+        {
+            get { return joinAllModel; }
+            set { joinAllModel = value; }
+        }
+        private bool joinPickedModel;
+        public bool JoinPickedModel
+        {
+            get { return joinPickedModel; }
+            set { joinPickedModel = value; }
+        }
+        private bool joinFloorModel;
+        public bool JoinFloorModel
+        {
+            get { return joinFloorModel; }
+            set { joinFloorModel = value; }
+        }
+        /// <summary>
+        /// 确定需要扣减的楼层
+        /// </summary>
+        private List<string> floorToJoin = new List<string>();
+        public List<string> FloorToJoin
+        {
+            get { return floorToJoin; }
+            set { floorToJoin.Add(value.ToString()); }
+        }
         /// 定义需要使用到的相关属性和字段
         #region
         // 结构基础扣减字段
@@ -666,7 +704,7 @@ namespace XY_Tools_Project
         #endregion
         ///标高的全选、取消全选、反选按钮功能及相关单选按钮功能的实现
         #region
-        private void useModelRadioButton_Checked(object sender, RoutedEventArgs e)
+        private void selectFloorRadioButton_Checked(object sender, RoutedEventArgs e)
         {
             levelListStackPanel.IsEnabled = true;
             selectAllFloorButton.IsEnabled = true;
@@ -682,7 +720,7 @@ namespace XY_Tools_Project
             reverseSelectFloorButton.IsEnabled = false;
         }
 
-        private void selectModelRadioButton_Checked(object sender, RoutedEventArgs e)
+        private void pickModelRadioButton_Checked(object sender, RoutedEventArgs e)
         {
             levelListStackPanel.IsEnabled = false;
             selectAllFloorButton.IsEnabled = false;
@@ -728,6 +766,11 @@ namespace XY_Tools_Project
             InitializeComponent();
             _cache = cache;
         }
+        /// <summary>
+        /// 窗体加载时动态加载层高信息
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             for (int i = 0; i < _cache.LevelNameList.Count; i++)
@@ -741,13 +784,43 @@ namespace XY_Tools_Project
             levelListStackPanel.IsEnabled = false;
             selectAllModeleRadioButton.IsChecked = true;
         }
-
+        /// <summary>
+        /// 确认按钮点击事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void confirmBtn_Click(object sender, RoutedEventArgs e)
         {
-            isClickConfirm = true;
+            //返回窗体的关闭方式
+            IsClickConfirm = true;
+            //扣减方式的判断
+            if (selectAllModeleRadioButton.IsChecked == true)
+            {
+                JoinAllModel = true;
+            }
+            else if (pickModelRadioButton.IsChecked == true)
+            {
+                JoinPickedModel = true;
+            }
+            else if (selectFloorRadioButton.IsChecked == true)
+            {
+                JoinFloorModel = true;
+                foreach (var item in levelListStackPanel.Children)
+                {
+                    CheckBox checkBox = item as CheckBox;
+                    if (checkBox.IsChecked == true)
+                    {
+                        FloorToJoin.Add(checkBox.Content.ToString());
+                    }
+                }
+            }
             this.Close();
         }
-
+        /// <summary>
+        /// 取消按钮点击事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void cancelBtn_Click(object sender, RoutedEventArgs e)
         {
             this.Close();

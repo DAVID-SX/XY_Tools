@@ -113,5 +113,8 @@
   <ItemGroup>
     <Resource Include="pic\TabManager.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="pic\JoinGeometry.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -15,8 +15,8 @@
         <GroupBox Name="modelSourceGroupBox" Header="范围选择" Margin="3" Padding="3">
             <StackPanel>
                 <RadioButton x:Name="selectAllModeleRadioButton" Content="扣减全部构件" Margin="3" Checked="selectAllModeleRadioButton_Checked"/>
-                <RadioButton Name="selectModelRadioButton" Content="选择扣减模型" Margin="3" Checked="selectModelRadioButton_Checked" />
-                <RadioButton x:Name="useModelRadioButton" Content="根据楼层扣减" Margin="3" Checked="useModelRadioButton_Checked" />
+                <RadioButton Name="pickModelRadioButton" Content="选择扣减模型" Margin="3" Checked="pickModelRadioButton_Checked" />
+                <RadioButton x:Name="selectFloorRadioButton" Content="根据楼层扣减" Margin="3" Checked="selectFloorRadioButton_Checked" />
                 <Border Height="330" BorderThickness="1,1,1,0" BorderBrush="Black">
                     <ScrollViewer Name="floorListScrollList" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" Margin="1" BorderThickness="2" >
                         <StackPanel  x:Name="levelListStackPanel"/>
